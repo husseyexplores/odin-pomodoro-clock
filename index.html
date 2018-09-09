@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pomodoro Timer</title>
+
+  <!-- Google Fonts Import -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="primary-heading text-center">Pomodoro Timer</h2>
+    
+    <div class="clock">
+
+      <div class="clock__controls-wrapper">
+        <div class="clock__controls">
+          <div class="clock__controls-name">session length</div>
+          <button class="clock__controls-button" id="session-minus">-</button>
+            <span class="clock__controls-number" id="session-time">25:00</span>
+          <button class="clock__controls-button" id="session-plus">+</button>
+        </div>
+
+        <div class="clock__controls">
+          <div class="clock__controls-name">break length</div>
+          <button class="clock__controls-button" id="break-minus">-</button>
+            <span class="clock__controls-number" id="break-time">5:00</span>
+          <button class="clock__controls-button" id="break-plus">+</button>
+        </div>
+      </div>
+
+      <div class="clock__countdown-wrapper row" id="countdown-wrapper">
+        <h3 class="clock__current-session" id="main-text">work work~</h3>
+        <div class="clock__timer" id="main-time">25:00</div>
+      </div>
+      <div class="clock__buttons-wrapper">
+        <button class="clock__start" id="start">start</button>
+        <button class="clock__reset" id="reset">reset</button>
+      </div>
+    </div>
+
+    <style>
+      .hussey {
+        text-align: center;
+        margin-top: 40px;
+        color: #fff;
+        font-family: monospace;
+        font-size: 16px;
+        padding: 10px;
+        letter-spacing: 4px;
+      }
+
+      .hussey__text-wrapper {
+        padding: 20px;
+      }
+
+      .glitchy-text {
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        text-shadow: 1px -2px 0 #f00, -1px 2px 0 #0f0, 2px -1px 0 #00f;
+      }
+
+      .hussey .glitchy-text:hover {
+        animation: glitch 1s step-end infinite;
+      }
+
+      .hussey .repo-link{
+        position: relative;
+      }
+
+      .hussey .repo-link::after {
+        content: " ";
+        position: absolute;
+        height: 1px;
+        width: 75%;
+        background: #fff;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .hussey .hussey-name {
+        margin-top: 25px;
+      }
+
+      @keyframes glitch {
+        0% {
+          text-shadow: 0 -2px 0 #f00, 0 2px 0 #0f0, 2px 0 0 #00f;
+        }
+
+        25% {
+          text-shadow: 2px -1px 0 #f00, 1px 1px 0 #0f0, 1px 0 0 #00f;
+        }
+
+        50% {
+          text-shadow: 1px 0 0 #f00, -2px 0 0 #0f0, 0 -1px 0 #00f;
+        }
+
+        75% {
+          text-shadow: -1px -2px 0 #f00, 1px 2px 0 #0f0, 3px 2px 0 #00f;
+        }
+
+        100% {
+          text-shadow: -2px -3px 0 #f00, 1px -2px 0 #0f0, 5px -3px 0 #00f;
+        }
+
+      }
+    </style>
+    <div class="hussey">
+      <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"
+        style="fill: #fff;">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+      </svg>
+      <div class="hussey__text-wrapper">
+        <p>
+          <a href="https://github.com/husseyexplores/husseyexplores.TOPcalculator" class="glitchy-text repo-link">GitHub Repository Link</a>
+        </p>
+          <p class="text-center glitchy-text hussey-name">HusseyExplores</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- App Functions -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>

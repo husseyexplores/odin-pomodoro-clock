@@ -1,0 +1,195 @@
+/*
+   0 - 600px:        Phone
+   600 - 900px:      Tablet - Portrait
+   900 - 1200px:     Tablet - Landscape
+   1200 - 1800px:    Normal styles - Desktop [Desktop first approach]
+   1800px+:       Big desktop
+
+
+   $breakpoint argument choices:
+      - phone
+      - tab-port
+      - tab-land
+      - big-desk
+*/
+.text--warning {
+  color: #D95D4E !important; }
+
+.text--lightgrey {
+  color: #DADADA !important; }
+
+.text--grey {
+  color: #979797 !important; }
+
+.text--fone {
+  color: #ffdb65 !important; }
+
+.text-center {
+  text-align: center; }
+
+@keyframes blinker {
+  from,
+  to {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent; }
+  50% {
+    border-color: #ffdb65; } }
+
+:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #FF3366;
+  --color-primary-dark: #BA265D;
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #eeeeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #1f1f1f;
+  --color-grey-dark-2: #333;
+  --color-grey-dark-3: #777;
+  --color-grey-dark-4: #999;
+  --color-blue-dark-1: #030A11;
+  --color-blue-dark-2: #1d2027;
+  --color-blue-dark-2: #292d36;
+  --color-blue-light-1: #b3cadf;
+  --color-blue-light-2: #92a7bb;
+  --color-blue-light-3: #677888;
+  --color-blue-light-4: #505e6b;
+  --color-blue-light-5: #374756;
+  --color-blue-grey-1: #8c9ba7;
+  --color-red-light-1: #fd7474;
+  --color-red-light-2: #da4949;
+  --line: 1px solid var(--color-grey-light-2);
+  --line-dark-1: 1px solid var(--color-grey-light-3); }
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  background-color: #111317;
+  display: flex;
+  align-items: center; }
+
+.primary-heading {
+  color: #FFF;
+  font-family: monospace;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  font-weight: bold; }
+
+.typewritter h1 {
+  font-family: monospace;
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid #ffdb65;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em;
+  /* Adjust as needed */
+  animation: typing 2.5s steps(14, end), blink-caret 1s step-end infinite; }
+
+.container {
+  position: relative;
+  margin: 5rem auto;
+  max-width: 114rem; }
+
+.row {
+  margin: 4rem auto; }
+
+.clock {
+  margin-top: 3rem;
+  text-align: center;
+  font-family: monospace; }
+  .clock__controls-wrapper {
+    display: flex;
+    justify-content: center; }
+    @media (max-width: 542px) {
+      .clock__controls-wrapper {
+        flex-direction: column; } }
+  .clock__controls {
+    padding: 3rem; }
+  .clock__controls-name {
+    color: var(--color-grey-light-1);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 2rem; }
+  .clock__controls-button {
+    font-family: inherit;
+    font-size: 25px;
+    outline: none;
+    color: var(--color-grey-light-1);
+    border: none;
+    background-color: var(--color-blue-light-5);
+    padding: .8rem 2rem;
+    cursor: pointer;
+    transition: all .2s;
+    box-shadow: 3px 3px 0 var(--color-blue-grey-1); }
+    .clock__controls-button:hover, .clock__controls-button:focus {
+      background-color: var(--color-blue-dark-2); }
+    .clock__controls-button:active {
+      transform: scale(0.98); }
+  .clock__controls-number {
+    color: var(--color-grey-light-1);
+    padding: 2rem;
+    font-size: 2rem; }
+  .clock__countdown-wrapper {
+    cursor: pointer;
+    padding: 3rem; }
+  .clock__current-session {
+    color: var(--color-grey-light-1);
+    font-family: inherit;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 2rem; }
+  .clock__timer {
+    color: var(--color-grey-light-1);
+    font-family: inherit;
+    font-size: 3rem;
+    letter-spacing: 3px; }
+  .clock__buttons-wrapper {
+    display: flex;
+    justify-content: space-around; }
+  .clock__start, .clock__reset {
+    font-family: inherit;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    outline: none;
+    padding: 1.5rem 2.5rem;
+    border: none;
+    color: var(--color-grey-light-1);
+    font-size: 1.8rem;
+    background-color: var(--color-blue-light-5);
+    cursor: pointer;
+    transition: all .2s;
+    box-shadow: 3px 3px 0 var(--color-blue-grey-1); }
+    .clock__start:hover, .clock__start:active, .clock__reset:hover, .clock__reset:active {
+      background-color: var(--color-blue-dark-2); }
+    .clock__start:active, .clock__reset:active {
+      transform: scale(0.98); }
