@@ -31,7 +31,7 @@ const selectors = {
   reset: document.querySelector("#reset"),
   countdownWraper: document.querySelector("#countdown-wrapper")
 };
-const tingting = new Audio("/tingting.wav");
+const tingting = new Audio("tingting.wav");
 let currentSession = "WORK";
 let isTicking = false;
 let timerInterval;
